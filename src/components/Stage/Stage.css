@@ -1,0 +1,26 @@
+.stage {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 700px;
+  box-shadow: 0 2px 9px #ddd;
+  box-sizing: border-box;
+  padding: 20px;
+  margin: 20px 0;
+}
+.stage__time {
+  box-shadow: 0 2px 9px #ddd;
+  box-sizing: border-box;
+  padding: 10px 20px;
+  border-radius: 20px;
+}
+.stage-visible-button {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  border: none;
+  background-color: #eee;
+  cursor: pointer;
+  outline: none;
+}
