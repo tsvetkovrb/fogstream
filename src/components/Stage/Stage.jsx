@@ -1,8 +1,10 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
+import { string, array } from "prop-types";
+
 import "./Stage.css";
-import Step from "../Step";
+import { Step } from "../Step";
 
 export default class Stage extends Component {
   state = {
@@ -11,19 +13,9 @@ export default class Stage extends Component {
     steps: this.props.steps
   };
 
-  /**
-   * Обновить время этапа
-   */
-  updateTimeValue = event => {
-    this.setState({
-      timeValue: event.target.value
-    });
-    if (event.target.value === "") {
-      event.target.value = "00:00";
-      this.setState({
-        timeValue: "00:00"
-      });
-    }
+  static propTypes = {
+    name: string.isRequired,
+    steps: array.isRequired
   };
 
   /**
