@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 
 import "./AddForm.css";
+import { Input } from "../common/Input/Input";
+import { Button } from "../common/Button/Button";
 
 export default class AddForm extends Component {
   state = {
@@ -32,14 +34,13 @@ export default class AddForm extends Component {
   render() {
     return (
       <form className="add-form" onSubmit={this.hanldeSubmit}>
-        <input
+        <Input
           type="text"
           placeholder="Добавьте название этапа"
           value={this.state.title}
           onChange={this.handleChange}
-          className="add-form__input"
         />
-        <button className="add-form__button">Добавить этап</button>
+        <Button>Добавить этап</Button>
       </form>
     );
   }

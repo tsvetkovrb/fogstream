@@ -1,8 +1,17 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import App from "./App";
+import { BrowserRouter } from "react-router-dom";
+
+import { Root } from "./routes/Root";
+
+import steps from "./steps";
 
 import "reset.css";
 import "./index.css";
 
-ReactDOM.render(<App />, document.getElementById("root"));
+ReactDOM.render(
+  <BrowserRouter>
+    <Root steps={steps} />
+  </BrowserRouter>,
+  document.getElementById("root")
+);

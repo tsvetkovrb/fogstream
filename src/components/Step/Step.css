@@ -7,14 +7,14 @@
   padding: 10px;
   width: 130px;
   height: 140px;
-  cursor: grab;
-}
-.step__button {
-  width: 110px;
-  height: 25px;
-  border: none;
-  background-color: #f2f2f2;
-  color: #000;
+  margin: 0 10px;
+  font-size: 14px;
+  text-align: center;
   cursor: pointer;
-  outline: none;
+  border-radius: 5px;
+}
+.step__author,
+.step__name {
+  border-bottom: 2px solid #f2f2f2;
+  padding-bottom: 4px;
 }

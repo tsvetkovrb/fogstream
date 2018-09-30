@@ -1,13 +1,17 @@
 import React, { Component } from "react";
+import { v4 } from "uuid";
+
 import Stage from "./components/Stage/Stage";
 import Form from "./components/AddForm/AddForm";
 
-class App extends Component {
+import steps from "./steps";
+
+export default class App extends Component {
   /**
    * State
    */
   state = {
-    stage: []
+    stage: [{ name: "Этап 1" }]
   };
 
   /**
@@ -29,7 +33,8 @@ class App extends Component {
     return (
       <div style={styles.app} className="main">
         {this.state.stage.map(stage => (
-          <Stage name={stage.name} />
+          //Вывожу этапы, которые записываются в state
+          <Stage name={stage.name} key={v4()} steps={steps} />
         ))}
         <Form onAdd={this.handleAdd} />
       </div>
@@ -50,5 +55,3 @@ const styles = {
     minHeight: "100vh"
   }
 };
-
-export default App;

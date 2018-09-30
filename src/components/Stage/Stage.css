@@ -8,6 +8,14 @@
   box-sizing: border-box;
   padding: 20px;
   margin: 20px 0;
+  border-radius: 10px;
+}
+.stage__name {
+  text-transform: uppercase;
+  border-bottom: 2px solid #f2f2f2;
+  padding-bottom: 4px;
+  width: 60px;
+  font-size: 14px;
 }
 .stage__time {
   box-shadow: 0 2px 9px #ddd;
@@ -23,4 +31,16 @@
   background-color: #eee;
   cursor: pointer;
   outline: none;
+  border-radius: 10px;
+}
+.stage__link a {
+  color: #000;
+  text-decoration: none;
+}
+.stage__steps {
+  display: flex;
+}
+.stage__steps a {
+  text-decoration: none;
+  color: #000;
 }

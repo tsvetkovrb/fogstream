@@ -1,4 +1,5 @@
-import React, { Component, Fragment } from "react";
+import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 import "./Stage.css";
 import Step from "../Step";
@@ -7,15 +8,7 @@ export default class Stage extends Component {
   state = {
     visible: true,
     timeValue: "00:00",
-    editing: true
-  };
-  /**
-   * Свернуть/развернуть этап
-   */
-  handleClickButtonVisible = () => {
-    this.setState({
-      visible: !this.state.visible
-    });
+    steps: this.props.steps
   };
 
   /**
@@ -53,31 +46,21 @@ export default class Stage extends Component {
       <div className="stage">
         <button
           className="stage-visible-button"
-          onClick={this.handleClickButtonVisible}
+          onClick={() => this.setState({ visible: !this.state.visible })} // Свернуть/развернуть этап
         >
           {this.state.visible ? "⨉" : "+"}
         </button>
         <div className="stage__name">{name}</div>
         <div className="stage__time">{this.state.timeValue}</div>
         {this.state.visible && (
-          <Fragment>
-            <Step
-              // bing(this) чтобы привязать this к контексту выполнения
-              time={this.updateTimeValue.bind(this)}
-              editing={this.state.editing}
-              save={this.handleEditingStep.bind(this)}
-            />
-            <Step
-              time={this.updateTimeValue.bind(this)}
-              editing={this.state.editing}
-              save={this.handleEditingStep.bind(this)}
-            />
-            <Step
-              time={this.updateTimeValue.bind(this)}
-              editing={this.state.editing}
-              save={this.handleEditingStep.bind(this)}
-            />
-          </Fragment>
+          <div className="stage__steps">
+            {this.state.steps.map(step => (
+              //Вывожу массив из 3-х шагов, который находится в файле steps.js
+              <Link key={step.id} to={`/${step.id}/editing`}>
+                <Step name={step.name} author={step.author} time={step.time} />
+              </Link>
+            ))}
+          </div>
         )}
       </div>
     );

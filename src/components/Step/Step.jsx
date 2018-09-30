@@ -2,13 +2,10 @@ import React from "react";
 
 import "./Step.css";
 
-export default ({ time, editing, save }) => (
-  <form className="step">
-    <input type="text" />
-    <input type="text" />
-    <input type="time" onChange={time} defaultValue="00:00" />
-    <button onClick={save} className="step__button">
-      {editing ? "Изменить" : "Сохранить"}
-    </button>
-  </form>
+export default ({ time, name, author, onClick }) => (
+  <div className="step" onClick={onClick}>
+    <p className="step__name">{name}</p>
+    <p className="step__author">{author}</p>
+    <p className="step__time">{time}</p>
+  </div>
 );

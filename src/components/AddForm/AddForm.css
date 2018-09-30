@@ -3,24 +3,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 100px;
-  justify-content: space-between;
   top: 10%;
   right: 5%;
-}
-.add-form__input {
-  border: none;
-  border-bottom: 2px solid #ddd;
-  padding: 10px;
-  outline: none;
-}
-.add-form__button {
-  border: none;
-  background-color: #eee;
-  width: 140px;
-  height: 30px;
-  outline: none;
-  cursor: pointer;
+  border: 2px solid #ddd;
 }
 .add-form__button:hover {
   /* background-color: #eee; */
