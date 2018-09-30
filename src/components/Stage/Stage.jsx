@@ -13,6 +13,10 @@ export default class Stage extends Component {
     steps: this.props.steps
   };
 
+  /**
+   * PropTypes
+   */
+
   static propTypes = {
     name: string.isRequired,
     steps: array.isRequired
