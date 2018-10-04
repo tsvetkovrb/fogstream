@@ -11,8 +11,20 @@ export default class App extends Component {
    * State
    */
   state = {
-    stage: [{ name: "Этап 1" }]
+    stage: []
   };
+
+  componentDidMount() {
+    let stage = [];
+
+    try {
+      stage = JSON.parse(localStorage.getItem("stage")) || [];
+    } catch (err) {
+      stage = [{ name: "Этап 1" }];
+    }
+
+    this.setState({ stage });
+  }
 
   /**
    * Добавление названия этапа
@@ -23,7 +35,9 @@ export default class App extends Component {
     };
 
     const stage = [...this.state.stage, item];
-    this.setState({ stage });
+    this.setState({ stage }, () => {
+      localStorage.setItem("stage", JSON.stringify(stage));
+    });
   };
 
   /**
