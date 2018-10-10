@@ -18,7 +18,7 @@ const store = createStore(reducer, steps);
 ReactDOM.render(
   <Provider store={store}>
     <BrowserRouter>
-      <Root steps={steps} />
+      <Root />
     </BrowserRouter>
   </Provider>,
   document.getElementById("root")
